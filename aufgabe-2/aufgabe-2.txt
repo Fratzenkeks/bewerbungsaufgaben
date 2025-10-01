@@ -1,0 +1,21 @@
+public void wordCount(String value) {
+	Map<String, List<String>> wordMap = new HashMap<String, List<String>>();
+
+	List<String> words = List.of(value.replaceAll("[^\\p{L}\\s]", "").split(" "));
+	words.stream().forEach(word -> {
+		if(wordMap.containsKey(word)) {
+			wordMap.get(word).add(word);
+		} else  {
+			wordMap.put(word, List.of(word));
+		}
+	});
+
+	Map<String, List<String>> sorted = wordMap.entrySet()
+			.stream()
+			.sorted((e1, e2) -> Integer.compare(e2.getValue().size(), e1.getValue().size()))
+			.collect(LinkedHashMap::new, (m, e) -> m.put(e.getKey(), e.getValue()), LinkedHashMap::putAll);
+
+	sorted.entrySet().stream().forEach(entry -> {
+		System.out.println(entry.getKey() + " : " + entry.getValue().size());
+	});
+}
