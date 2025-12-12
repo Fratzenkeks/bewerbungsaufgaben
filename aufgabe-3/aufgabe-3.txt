@@ -1,4 +1,0 @@
-Als erstes würde ich alle Leerzeichen entfernen und den Ausdruck in Einzelteile splitten. Prüfung ob darin Klammern vorkommen, wenn ja, den Ausdruck in der Klammer berechnen und anschließend prüfen,
-welche Operation für den anderen Operanden ansteht und so die Gleichung lösen. Falls keine Klammern vorhanden sind, wird geprüft, ob multipliziert oder dividiert werden muss. Wenn ja, wird diese Operation
-zuerst durchgeführt und anschließend der dritte Operand betrachtet. Bei Multiplikation und Division ist die Reihenfolge unerheblich und so stelle ich die Regel Punkt vor Strich sicher.
-Dies funktioniert nur, wenn wir definieren, das der Ausdruck genau drei Operanden hat und eine, nicht verschachtelbare, Klammer.
